@@ -1,0 +1,8 @@
+1. Rscript bNTI_Local_Machine_Fungal_Eco.r
+2. Rscript RC_bray_multip.R
+3. perl triangle2list_bNTI.pl
+4. perl triangle2list_RC.pl
+5. perl pipei.pl
+6. perl get_sites_pair2.pl
+7. perl site2depth.pl
+8. perl get_depth_pair.pl

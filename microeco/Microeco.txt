@@ -1,0 +1,565 @@
+library(microeco)
+library(ape)
+library(qiime2R)
+# use pipe operator in magrittr package
+library(magrittr)
+# set.seed is used to fix the random number generation to make the results repeatable
+set.seed(123)
+# make the plotting background same with the tutorial
+library(ggplot2)
+theme_set(theme_bw())
+
+#-------------------------
+
+# 定义数据导入函数
+qiimed2meco <- function(ASV_data, sample_data, taxonomy_data, phylo_tree = NULL){
+	# Read ASV data
+	ASV <- as.data.frame(read_qza(ASV_data)$data)
+	#  Read metadata
+	metadata <- read_q2metadata(sample_data)
+	rownames(metadata) <- as.character(metadata[, 1])
+	# Read taxonomy table
+	taxa_table <- read_qza(taxonomy_data)
+	taxa_table <- parse_taxonomy(taxa_table$data)
+	# Make the taxonomic table clean, this is very important.
+	taxa_table %<>% tidy_taxonomy
+	# Read phylo tree
+	if(!is.null(phylo_tree)){
+		phylo_tree <- read_qza(phylo_tree)$data
+	}
+	dataset <- microtable$new(sample_table = metadata, tax_table = taxa_table, otu_table = ASV, phylo_tree = phylo_tree)
+	dataset
+}
+
+# 导入本地数据，包括OTU表、样本元数据、分类表、tree文件。这几个文件均有QIIME2生成。
+meco_dataset <- qiimed2meco(ASV_data = "E:/Researches/Xiaqian/NGS/CleanData/ALL/细菌V6V8-1/Analysis_20210624/microeco/table_abund31-with-Phylum-no-Unassigned.qza", sample_data = "E:/Researches/Xiaqian/NGS/CleanData/ALL/细菌V6V8-1/Analysis_20210624/microeco/sample-metadata.tsv", taxonomy_data = "E:/Researches/Xiaqian/NGS/CleanData/ALL/细菌V6V8-1/Analysis_20210624/microeco/taxonomy.qza", phylo_tree = "E:/Researches/Xiaqian/NGS/CleanData/ALL/细菌V6V8-1/Analysis_20210624/microeco/rooted_tree.qza")
+
+meco_dataset
+
+-------------------------
+meco_dataset$tidy_dataset()
+print(meco_dataset)
+
+meco_dataset$sample_sums() %>% range
+
+# As an example, we use 7702 sequences in each sample
+meco_dataset$rarefy_samples(sample.size = 7702)
+meco_dataset$sample_sums() %>% range
+## 5 samples removedbecause they contained fewer reads than `sample.size`.
+## 1286 OTUs were removed because they are no longer present in any sample after random subsampling
+
+# Alpha-diversity
+
+meco_dataset$cal_abund()
+# return dataset$taxa_abund
+class(meco_dataset$taxa_abund)
+
+dir.create("taxa_abund")
+meco_dataset$save_abund(dirpath = "taxa_abund")
+
+# 若要计算Faith's phylogenetic diversity，设置PD = TRUE，计算速度会较慢
+meco_dataset$cal_alphadiv(PD = TRUE)
+
+# return dataset$alpha_diversity
+class(meco_dataset$alpha_diversity)
+
+# save dataset$alpha_diversity to a directory
+dir.create("alpha_diversity")
+meco_dataset$save_alphadiv(dirpath = "alpha_diversity")
+
+-------------------------
+
+# beta-diversity
+
+# If you do not want to calculate unifrac metrics, use unifrac = FALSE
+# 需要GUniFrac package
+install.packages("GUniFrac")
+
+meco_dataset$cal_betadiv(unifrac = TRUE)
+# return dataset$beta_diversity
+class(meco_dataset$beta_diversity)
+
+# save dataset$beta_diversity to a directory
+dir.create("beta_diversity")
+meco_dataset$save_betadiv(dirpath = "beta_diversity")
+
+-------------------------
+# trans_abund class
+# 绘制Barplot。转换分类丰度数据，以便使用ggplot2包绘制分类单元丰度。
+# create trans_abund object
+# use 12 Phyla with the highest abundance in the dataset.
+t1 <- trans_abund$new(dataset = meco_dataset, taxrank = "Phylum", ntaxa = 12)
+# t1 object now include the transformed abundance data t1$abund_data and other elements for the following plotting
+
+-------------------------
+# 绘制Barplot. We remove the sample names in x axis and add the facet to show abundance according to groups.
+t1$plot_bar(others_color = "grey70", facet = "Site", xtext_keep = FALSE, legend_text_italic = FALSE)# [Fig1]
+# return a ggplot2 object
+
+t1$plot_bar(others_color = "grey70", facet = "Depth", xtext_keep = FALSE, legend_text_italic = FALSE)# [Fig1.2]
+
+# 获取组内平均值。The groupmean parameter can be used to obtain the group-mean barplot.
+t1 <- trans_abund$new(dataset = meco_dataset, taxrank = "Phylum", ntaxa = 12, groupmean = "Site")# [Fig2]
+t1$plot_bar(others_color = "grey70", legend_text_italic = FALSE)
+
+
+t1 <- trans_abund$new(dataset = meco_dataset, taxrank = "Phylum", ntaxa = 12, groupmean = "Depth")# [Fig2.2]
+t1$plot_bar(others_color = "grey70", legend_text_italic = FALSE)
+-------------------------
+#Then alluvial plot is implemented in the plot_bar function.
+install.packages("ggalluvial")
+t1 <- trans_abund$new(dataset = meco_dataset, taxrank = "Phylum", ntaxa = 12)
+# use_alluvium = TRUE make the alluvial plot, clustering =TRUE can be used to reorder the samples by clustering
+t1$plot_bar(use_alluvium = TRUE, clustering = TRUE, xtext_type_hor = FALSE, xtext_size = 6)
+
+-------------------------
+#The box plot is an excellent way to intuitionally show data distribution across groups.
+# show 15 taxa at Class level
+t1 <- trans_abund$new(dataset = meco_dataset, taxrank = "Class", ntaxa = 15)
+t1$plot_box(group = "Site")
+
+# Then we show the heatmap with the high abundant Class.
+# show 40 taxa at Genus level
+t1 <- trans_abund$new(dataset = meco_dataset, taxrank = "Class", ntaxa = 40)
+t1$plot_heatmap(facet = "Depth", xtext_keep = FALSE, withmargin = FALSE)#Heatmap40Classes-Depth-with-Xnames.pdf
+
+-------------------------
+# Then, we show the pie chart.
+t1 <- trans_abund$new(dataset = meco_dataset, taxrank = "Phylum", ntaxa = 6, groupmean = "Site")
+# all pie chart in one row
+t1$plot_pie(facet_nrow = 1)#Pie-Sites.pdf
+
+
+t1 <- trans_abund$new(dataset = meco_dataset, taxrank = "Phylum", ntaxa = 6, groupmean = "Depth")
+t1$plot_pie(facet_nrow = 1)#Pie-Depth.pdf
+
+-------------------------
+# trans_venn class
+#The trans_venn class is used for venn analysis. To analyze the unique and shared OTUs of groups, we first merge samples according to the “Group” column of sample_table.
+
+# merge samples as one community for each group
+dataset1 <- meco_dataset$merge_samples(use_group = "Location")#or "Position", Site and Depth is more than five, not suitable to draw veen
+# dataset1 is a new microtable object
+# create trans_venn object
+t1 <- trans_venn$new(dataset1, ratio = "seqratio")
+t1$plot_venn()# Veen-Location.pdf & Veen-Position.pdf
+# The integer data is OTU number
+# The percentage data is the sequence number/total sequence number
+
+-------------------------
+#When the groups are too many to show with venn plot, we can use petal plot.
+# use "Type" column in sample_table
+dataset1 <- meco_dataset$merge_samples(use_group = "Site")
+t1 <- trans_venn$new(dataset1)
+t1$plot_venn(petal_plot = TRUE)#Flower-Sites.pdf
+
+
+dataset1 <- meco_dataset$merge_samples(use_group = "Depth")
+t1 <- trans_venn$new(dataset1)
+t1$plot_venn(petal_plot = TRUE)#Flower-Depth.pdf
+
+-------------------------
+
+# trans_alpha class
+t1 <- trans_alpha$new(dataset = meco_dataset, group = "Depth")
+# return t1$alpha_stat
+t1$alpha_stat[1:5, ]
+
+#Then, we test the differences among groups using the KW rank sum test and anova with multiple comparisons.
+t1$cal_diff(method = "anova")
+# return t1$res_alpha_diff
+t1$res_alpha_diff[1:5, ]
+
+# Now, let us plot the mean and se of alpha diversity for each group, and add the duncan.test (agricolae package) result.
+t1$plot_alpha(add_letter = TRUE, measure = "Chao1")
+
+#We can also use the boxplot to show the paired comparisons directly.
+t1$plot_alpha(pair_compare = TRUE, measure = "Chao1")
+
+
+# trans_beta class
+# we first create an object and select PCoA for ordination
+t1 <- trans_beta$new(dataset = meco_dataset, group = "Depth", measure = "bray", ordination = "PCoA")
+# t1$res_ordination is the ordination result list
+class(t1$res_ordination)
+# plot the PCoA result
+t1$plot_ordination(plot_color = as.factor(meco_dataset$sample_table$Depth), plot_shape = "Site", plot_group_ellipse = TRUE)
+-------------------------
+# Then we plot and compare the group distances.
+# calculate and plot sample distances within groups
+t1$cal_group_distance()
+# return t1$res_group_distance
+t1$plot_group_distance(distance_pair_stat = TRUE)
+
+# calculate and plot sample distances between groups (报错：错误: Insufficient values in manual scale. 15 needed but only 8 provided.)
+t1$cal_group_distance(within_group = FALSE)
+t1$plot_group_distance(distance_pair_stat = TRUE)
+
+-------------------------
+# Clustering plot is also a frequently used method.
+# use replace_name to set the label name, group parameter used to set the color (报错：找不到对象'dataset')
+t1$plot_clustering(group = "Depth", replace_name = c("Location", "Indexs"))
+
+-------------------------
+# perMANOVA is often used in the differential test of distances among groups.
+# manova for all groups
+t1$cal_manova(cal_manova_all = TRUE)
+t1$res_manova$aov.tab
+
+#Permutation: free
+#Number of permutations: 999
+
+#Terms added sequentially (first to last)
+
+#           Df SumsOfSqs MeanSqs F.Model    R2 Pr(>F)    
+#Depth       1     7.862  7.8622  29.962 0.222  0.001 ***
+#Residuals 105    27.553  0.2624         0.778           
+#Total     106    35.415                 1.000           
+#---
+#Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+# manova for each paired groups
+t1$cal_manova(cal_manova_paired = TRUE)
+t1$res_manova
+
+#     Groups measure permutations         R2 p.value Significance
+#1   5 vs 10    bray          999 0.29306324   0.001          ***
+#2   5 vs 15    bray          999 0.34344154   0.001          ***
+#3   5 vs 20    bray          999 0.42505851   0.001          ***
+#4   5 vs 25    bray          999 0.50097496   0.001          ***
+#5   5 vs 30    bray          999 0.35438908   0.005           **
+#6  10 vs 15    bray          999 0.12769913   0.001          ***
+#7  10 vs 20    bray          999 0.25655258   0.001          ***
+#8  10 vs 25    bray          999 0.34061270   0.001          ***
+#9  10 vs 30    bray          999 0.18145178   0.005           **
+#10 15 vs 20    bray          999 0.08156122   0.002           **
+#11 15 vs 25    bray          999 0.19179202   0.001          ***
+#12 15 vs 30    bray          999 0.10109046   0.006           **
+#13 20 vs 25    bray          999 0.10927617   0.001          ***
+#14 20 vs 30    bray          999 0.08873378   0.011            *
+#15 25 vs 30    bray          999 0.06250502   0.381             
+
+# manova for specified group set: here "Group + Type"
+t1$cal_manova(cal_manova_set = "Site+ Samples")
+t1$res_manova$aov.tab
+
+#Permutation: free
+#Number of permutations: 999
+
+#Terms added sequentially (first to last)
+
+#           Df SumsOfSqs MeanSqs F.Model      R2 Pr(>F)
+#Site        6     2.679       0       0 0.07566      1
+#Samples   100    32.735       0       0 0.92434      1
+#Residuals   0     0.000    -Inf         0.00000       
+#Total     106    35.415                 1.00000
+
+
+# trans_diff class
+# metastat analysis at Genus level
+t1 <- trans_diff$new(dataset = meco_dataset, method = "metastat", group = "Depth", metastat_taxa_level = "Genus")
+# t1$res_metastat is the result
+# t1$res_metastat_group_matrix is the group comparisons order for plotting
+# plot the first paired groups, choose_group = 1
+t1$plot_metastat(use_number = 1:10, qvalue = 0.05, choose_group = 1)#choose_group = 1..15
+
+-------------------------
+# LEfSe combines the non-parametric test and linear discriminant analysis. We implement this approach in this package instead of the python version.
+t1 <- trans_diff$new(dataset = meco_dataset, method = "lefse", group = "Depth", alpha = 0.01, lefse_subgroup = NULL)
+# t1$res_lefse is the LEfSe result
+# t1$res_abund is the abundance information
+t1$plot_lefse_bar(LDA_score = 4)#LDA-score.pdf
+
+-------------------------
+#We can also plot the abundance of taxa detected using LEfSe.
+t1$plot_diff_abund(use_number = 1:30)# FIG3
+
+#Then, we show the cladogram of the differential features in the taxonomic tree. There are too many taxa in this dataset. As an example, we only use the highest 200 abundant taxa in the tree and 50 differential features. We only show the full taxonomic label at Phylum level and use letters at other levels to reduce the text overlap.
+# clade_label_level 5 represent phylum level in this analysis
+# require ggtree package
+t1$plot_lefse_cladogram(use_taxa_num = 200, use_feature_num = 50, clade_label_level = 5)#看不清
+
+# The third approach is rf, which depends on the random forest[14, 15] and the non-parametric test. The current method can calculate random forest by bootstrapping like the method in LEfSe and only use the significant features. MeanDecreaseGini is selected as the indicator value in the analysis.
+
+# use Genus level for parameter rf_taxa_level, if you want to use all taxa, change to "all"
+# nresam = 1 and boots = 1 represent no bootstrapping and use all samples directly
+t1 <- trans_diff$new(dataset = meco_dataset, method = "rf", group = "Depth", rf_taxa_level = "Genus")
+# t1$res_rf is the result stored in the object
+# plot the result
+t2 <- t1$plot_diff_abund(use_number = 1:20, only_abund_plot = FALSE)
+gridExtra::grid.arrange(t2$p1, t2$p2, ncol=2, nrow = 1, widths = c(2,2))
+# the middle asterisk represent the significances
+
+-------------------------
+
+# trans_nullmodel class
+# generate trans_nullmodel object; use 7702 OTUs as example
+t1 <- trans_nullmodel$new(meco_dataset, taxa_number = 7702)
+
+#betaNRI（ses.betampd）用于显示“basal”系统发育转换（phylogenetic turnover）[18]。与betaNTI相比，它能捕获更多与深层系统发育（deep phylogeny）相关的转换信息（turnover information）。值得注意的是，经过几十年的发展，出现了许多空模型（null models）。在trans-nullmodel class中，我们随机化了物种的系统发育相关性。这种洗牌方法（shuffling approach）固定了观察到的物种α-多样性和β-多样性的水平，以探讨观察到的系统发育转换是否与空模型（物种间的系统发育关系是随机的）显著不同。
+
+# 运行500次null model
+t1$cal_ses_betampd(runs=500, abundance.weighted = TRUE)
+# 返回t1$res_ses_betampd
+
+# 可以使用trans_beta class中的plot_group_distance function绘制betaNRI图。结果表明T20和T21的平均betaNRI 显著高于其它三者，表明T20和T21中的basal phylogenetic turnover是高的。
+# 将betaNRI矩阵加入到beta_diversity列表中
+meco_dataset$beta_diversity[["betaNRI"]] <- t1$res_ses_betampd
+
+# 使用measure "betaNRI"创建trans_beta class
+t2 <- trans_beta$new(dataset = meco_dataset, group = "Site", measure = "betaNRI")
+
+#t2 <- trans_beta$new(dataset = meco_dataset, group = "Depth", measure = "betaNRI")
+
+# transform the distance for each group
+t2$cal_group_distance()
+
+# 结果可视化
+library(ggplot2)
+g1 <- t2$plot_group_distance(distance_pair_stat = TRUE)
+g1 + geom_hline(yintercept = -2, linetype = 2) + geom_hline(yintercept = 2, linetype = 2)# betaNRI-Site-1.pdf & betaNRI-Depth-1.pdf
+
+
+#若要单独的对每个组进行 null model analysis，例如每个组作为一个物种池（species pool），我们可以分别为每个组计算结果。 我们发现，当分别对每个组进行betaNRI 分析时，CW和TW间的mean betaNRI没有显著差异，且二者均显著高于IW ，揭示了在将每个区域视为特定物种库的条件下，CW和TW中变量选择的强度（strength of variable selection）可能相似。
+
+# 创建一个列表用于存放trans_nullmodel的结果
+sesbeta_each <- list()
+group_col <- "Site"
+#group_col <- "Depth"
+all_groups <- unique(meco_dataset$sample_table[, group_col])
+
+# 对每个组分别进行计算
+for(i in all_groups){
+    # like the above operation, but need provide 'group' and 'select_group'
+    test <- trans_nullmodel$new(meco_dataset, group = group_col, select_group = i, taxa_number = 7702, add_data = env_data)
+    test$cal_ses_betampd(runs = 500, abundance.weighted = TRUE)
+    sesbeta_each[[i]] <- test$res_ses_betampd
+}
+
+# 合并结果并重塑（reshape），得到一个对称矩阵（symmetrical matrix）
+library(reshape2)
+test <- lapply(sesbeta_each, melt) %>% do.call(rbind, .) %>% reshape2::dcast(., Var1~Var2, value.var = "value") %>% `row.names<-`(.[,1]) %>% .[, -1, drop = FALSE]
+
+# 如同上述操作
+meco_dataset$beta_diversity[["betaNRI"]] <- test
+t2 <- trans_beta$new(dataset = meco_dataset, group = "Site", measure = "betaNRI")
+t2$cal_group_distance()
+g1 <- t2$plot_group_distance(distance_pair_stat = TRUE)
+g1 + geom_hline(yintercept = -2, linetype = 2) + geom_hline(yintercept = 2, linetype = 2)# betaNRI-Site-2.pdf
+
+-------------------------
+# BetaNTI(ses.betamntd) 可用于指示系统发育的末端转换（ phylogenetic terminal turnover） [17]
+# 运行500次null model
+t1$cal_ses_betamntd(runs=500, abundance.weighted = TRUE)
+# 返回t1$res_ses_betamntd
+
+# 将betaNTI矩阵加入到beta_diversity列表中
+meco_dataset$beta_diversity[["betaNTI"]] <- t1$res_ses_betamntd
+
+# 使用measure "betaNRI"创建trans_beta class
+t2 <- trans_beta$new(dataset = meco_dataset, group = "Site", measure = "betaNTI")
+#t2 <- trans_beta$new(dataset = meco_dataset, group = "Depth", measure = "betaNTI")
+
+# transform the distance for each group
+t2$cal_group_distance()
+
+# 结果可视化
+library(ggplot2)
+g1 <- t2$plot_group_distance(distance_pair_stat = TRUE)
+g1 + geom_hline(yintercept = -2, linetype = 2) + geom_hline(yintercept = 2, linetype = 2)# betaNTI-Site.pdf & betaNTI-Depth.pdf
+
+-------------------------
+# cal_rcbray()功能用于计算RCbray (Bray-Curtis-based Raup-Crick) ，以评估成分转换（compositional turnover）是否主要受漂移控制[19]。我们应用空模型（null model）通过从每个物种池中随机采样个体来模拟物种分布，同时保留物种发生频率（species occurrence frequency）和样本物种丰富度（sample species richness）[18]。
+
+# result stored in t1$res_rcbray
+t1$cal_rcbray(runs = 1000)
+# return t1$res_rcbray
+
+
+# 作为一个例子，我们还计算了引用文献[17，18]中所示的在群落组装（community assembly）上推断过程（ inferred processes ）所占的比例。在此示例中，具有显着betaNTI值（|βNTI|> 2）的成对比较部分是估计的选择（Selection）造成影响； βNTI> 2代表异构选择（heterogeneous ）； βNTI<-2表示同质选择（homogeneous ）。 RCbray值表征了随机分配（randomization）下观察到的Bray-Curtis和Bray-Curtis期望值之间的偏差大小（magnitude of deviation）。 | RCbray | > 0.95被认为是显着的。 |βNTI| < 2和RCbray > +0.95被视为受散播限制（Dispersal Limitation）与漂移（Drift）相结合的影响。 |βNTI| < 2和RCbray < -0.95被视为均质分散（Homogenizing Dispersal）影响的估计值。 |βNTI| < 2和|RCbray| < 0.95估算了漂移单独作用的影响。
+
+# use betaNTI and rcbray to evaluate processes
+t1$cal_process(use_betamntd = TRUE)
+
+# return t1$res_process
+t1$res_process
+
+
+#                process percentage
+#1    variable selection  0.5290072
+#2 homogeneous selection 88.2384059
+#3  dispersal limitation  0.0000000
+#4 homogeneous dispersal  6.5773232
+#5                 drift  4.6552636
+
+
+# trans_network class
+## correlation-based network
+install.packages("WGCNA")
+library(WGCNA)
+# 以下3选1
+# 1. Use R base cor.test, slow
+t1 <- trans_network$new(dataset = meco_dataset, cal_cor = "base", taxa_level = "OTU", filter_thres = 0.0001, cor_method = "spearman")
+# return t1$res_cor_p list; one table: correlation; another: p value
+
+# 2. SparCC method, require SpiecEasi package
+# SparCC is very slow, so consider filtering more species with low abundance
+t1 <- trans_network$new(dataset = meco_dataset, cal_cor = "SparCC", taxa_level = "OTU", filter_thres = 0.001, SparCC_simu_num = 100)
+
+# 3. When the OTU number is large, use R WGCNA package to replace R base to calculate correlations
+# require WGCNA package
+t1 <- trans_network$new(dataset = meco_dataset, cal_cor = "WGCNA", taxa_level = "OTU", filter_thres = 0.0001, cor_method = "spearman")
+
+
+# The parameter COR_cut can be used to select the correlation threshold. Furthermore, COR_optimization = TRUE represent using RMT theory to find the optimized correlation threshold instead of the COR_cut(Deng et al. 2012).
+# construct network; require igraph package
+t1$cal_network(p_thres = 0.01, COR_optimization = TRUE)
+
+# add modules in the network
+t1$cal_module()
+# Totally, 38 modules are idenfified ...
+
+
+# save network
+# open the gexf file using Gephi(https://gephi.org/)
+# require rgexf package
+t1$save_network(filepath = "network-20210910.gexf")
+
+setwd("E:/Researches/Xiaqian/NGS/CleanData/ALL/细菌V6V8-1/Analysis_20210624/microeco/Network")
+
+# calculate network attributes
+t1$cal_network_attr()
+# return t1$res_network_attr
+
+	Vertex                 4.730000e+02
+	Edge                   2.622000e+03
+	Average_degree         1.108668e+01
+	Average_path_length    5.086602e+00
+	Network_diameter       1.000000e+01
+	Clustering_coefficient 5.719205e-01
+	Density                2.348873e-02
+	Heterogeneity          1.144846e+00
+	Centralization         1.057486e-01
+
+
+# classify the node; return t1$res_node_type
+t1$cal_node_type()
+# return t1$res_node_type
+# we retain the file for the following example in trans_func part
+network_node_type <- t1$res_node_type
+
+# plot node roles in terms of the within-module connectivity and among-module connectivity
+t1$plot_taxa_roles(use_type = 1)
+
+# plot node roles in terms of the within-module connectivity and among-module connectivity
+t1$plot_taxa_roles(use_type = 2)
+
+t1$cal_eigen()
+
+-------------------------
+
+# trans_func class
+
+## FAPROTAX 数据库
+```
+# Identify microbial traits
+# create object of trans_func
+t2 <- trans_func$new(meco_dataset)
+# mapping the taxonomy to the database
+# the function can recognize prokaryotes or fungi automatically
+t2$cal_spe_func()
+# return t2$res_spe_func, 1 represent function exists, 0 represent no or cannot confirmed.
+```
+
+# calculate the percentages of OTUs for each trait in each module of network
+# use_community = FALSE represent calculating module, not community, node_type_table provide the module information
+t2$cal_spe_func_perc(use_community = FALSE, node_type_table = network_node_type)
+# return t2$res_spe_func_perc
+# we only plot some important traits, so we use the default group list to filter and show the traits.
+t2$plot_spe_func_perc(select_samples = paste0("M", 1:10))
+# M represents module, ordered by the nodes number from high to low
+
+
+# calculate the percentages for communities,样本为单位
+t2$cal_spe_func_perc(use_community = TRUE)
+
+------------
+
+
+
+Tax4Fun requires a strict input file demand on the taxonomic information. To analyze the trimmed or changed OTU data in R with Tax4Fun, we provide a link to the Tax4Fun functional prediction.
+```
+t1 <- trans_func$new(meco_dataset)
+# install Tax4Fun package and download SILVA123 ref data from  http://tax4fun.gobics.de/
+wget https://github.com/bwemheu/Tax4Fun2/releases/download/1.1.5/Tax4Fun2_1.1.5.tar.gz
+install.packages(pkgs = "Tax4Fun2_1.1.5.tar.gz", repos = NULL, source = TRUE)
+# decompress SILVA123; provide path in folderReferenceData as you put
+t1$cal_tax4fun(folderReferenceData = "./SILVA123")
+# return two files: t1$tax4fun_KO: KO file; t1$tax4fun_path: pathway file.
+# t1$tax4fun_KO$Tax4FunProfile[1:5, 1:2]
+```
+Now, we use pathway file to analyze the abundance of pathway.
+
+```
+# must transpose to taxa row, sample column
+pathway_file <- t1$tax4fun_path$Tax4FunProfile %>% t %>% as.data.frame
+# filter rownames, only keep ko+number
+rownames(pathway_file) %<>% gsub("(^.*);\\s.*", "\\1", .)
+# load the pathway hierarchical metadata
+data(ko_map)
+# create a microtable object, familiar?
+func1 <- microtable$new(otu_table = pathway_file, tax_table = ko_map, sample_table = t1$sample_table)
+print(func1)
+```
+#Now, we need to trim data and calculate abundance.
+
+```
+func1$tidy_dataset()
+# calculate abundance automatically at three levels: level_1, level_2, level_3
+func1$cal_abund()
+print(func1)
+```
+# Then, we can plot the abundance.
+
+```
+# bar plot at level_1
+func2 <- trans_abund$new(func1, taxrank = "level_1", groupmean = "Site")
+func2$plot_bar(legend_text_italic = FALSE)
+```
+# We can also do something else. For example, we can use lefse to test the differences of the abundances and find the important enriched pathways across groups.
+
+```
+func2 <- trans_diff$new(dataset = func1, method = "lefse", group = "Site", alpha = 0.05, lefse_subgroup = NULL)
+func2$plot_lefse_bar(LDA_score = 3, width = 0.8)
+```
+
+```
+# bar plot at level_1
+func2 <- trans_abund$new(func1, taxrank = "level_1", groupmean = "Depth")
+func2$plot_bar(legend_text_italic = FALSE)
+```
+# We can also do something else. For example, we can use lefse to test the differences of the abundances and find the important enriched pathways across groups.
+
+```
+func2 <- trans_diff$new(dataset = func1, method = "lefse", group = "Depth", alpha = 0.05, lefse_subgroup = NULL)
+func2$plot_lefse_bar(LDA_score = 3, width = 0.8)
+```
+
+
+
+
+## Tax4Fun2
+#buildDependencies(path_to_reference_data = "./Tax4Fun2_ReferenceData_v2", install_suggested_packages = TRUE)
+runRefBlast(path_to_otus = "dna-sequences.fasta", path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_temp_folder = "Kelp_Ref99NR", database_mode = "Ref99NR", use_force = T, num_threads = 8)
+makeFunctionalPrediction(path_to_otu_table = "feature-table.tsv", path_to_reference_data = "Tax4Fun2_ReferenceData_v2", path_to_temp_folder = "Kelp_Ref99NR", database_mode = "Ref99NR", normalize_by_copy_number = TRUE, min_identity_to_reference = 0.97, normalize_pathways = TRUE)
+
+
+## trans_network class
+t1 <- trans_network$new(dataset = meco_dataset, cal_cor = "WGCNA", taxa_level = "OTU", filter_thres = 0.0001, cor_method = "spearman")
+
+# construct network; require igraph package
+t1$cal_network(p_thres = 0.01, COR_optimization = TRUE)
+# return t1$res_network
+
+# add modules in the network
+t1$cal_module()

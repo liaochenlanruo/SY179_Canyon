@@ -1,0 +1,3 @@
+# compute_alpha.R can be run directly in the terminal
+
+# Plot_alpha.R need run by copy the commands into Rstudio
