@@ -1,0 +1,242 @@
+Gene	F01	F02	F03	F04	F05	F06	Annotation	Pathway
+acdA	97	79	84	97	108	124	Acetate---CoA ligase (ADP-forming)	Aceticlastic methanogenesis
+acdB	11	10	9	5	2	4	Acetate---CoA ligase (ADP-forming)	Aceticlastic methanogenesis
+ackA	14	9	7	5	11	10	Acetate kinase	Aceticlastic methanogenesis
+acs	71	52	56	49	52	57	Acetyl-CoA synthetase	Aceticlastic methanogenesis
+acsC	0	1	3	5	13	21	Acetyl-CoA decarbonylase/synthase complex	Aceticlastic methanogenesis
+acsD	5	7	9	8	28	30	Acetyl-CoA decarbonylase/synthase complex	Aceticlastic methanogenesis
+cdhA	0	0	0	3	2	2	Anaerobic carbon-monoxide dehydrogenase, CODH/ACS complex	Aceticlastic methanogenesis
+cdhB	0	0	0	0	3	1	Anaerobic carbon-monoxide dehydrogenase, CODH/ACS complex	Aceticlastic methanogenesis
+cdhC	0	1	1	13	7	18	Acetyl-CoA decarbonylase/synthase, CODH/ACS complex	Aceticlastic methanogenesis
+cdhD	0	0	0	2	3	3	Acetyl-CoA decarbonylase/synthase, CODH/ACS complex	Aceticlastic methanogenesis
+cdhE	0	0	0	7	6	10	Acetyl-CoA decarbonylase/synthase, CODH/ACS complex	Aceticlastic methanogenesis
+cooF	9	8	11	16	20	20	Anaerobic carbon-monoxide dehydrogenase	Aceticlastic methanogenesis
+cooS	0	2	4	8	16	18	Anaerobic carbon-monoxide dehydrogenase	Aceticlastic methanogenesis
+pta	33	32	37	28	30	36	Phosphate acetyltransferase	Aceticlastic methanogenesis
+cytC	0	0	0	0	1	1	Multiheme c-type cytochrome	Anaerobic oxidation of methane (AOM)
+fmdC	1	0	0	0	2	2	Molybdenum containing formylmethanofuran dehydrogenase	Anaerobic oxidation of methane (AOM)
+fpoA	7	4	8	12	3	8	F420H2 dehydrogenase	Anaerobic oxidation of methane (AOM)
+fpoB	19	10	16	14	20	21	F420H2 dehydrogenase	Anaerobic oxidation of methane (AOM)
+fpoC	14	9	15	6	8	8	F420H2 dehydrogenase	Anaerobic oxidation of methane (AOM)
+fpoD	4	12	7	8	3	4	F420H2 dehydrogenase	Anaerobic oxidation of methane (AOM)
+fpoF	0	0	0	0	1	0	F420H2 dehydrogenase	Anaerobic oxidation of methane (AOM)
+fpoH	12	6	10	8	15	16	F420H2 dehydrogenase	Anaerobic oxidation of methane (AOM)
+fpoI	0	0	1	0	1	0	F420H2 dehydrogenase	Anaerobic oxidation of methane (AOM)
+fpoJ	9	9	9	14	11	8	F420H2 dehydrogenase	Anaerobic oxidation of methane (AOM)
+fpoK	11	9	9	12	6	5	F420H2 dehydrogenase	Anaerobic oxidation of methane (AOM)
+fpoL	14	11	11	11	11	16	F420H2 dehydrogenase	Anaerobic oxidation of methane (AOM)
+fpoM	13	7	6	14	11	7	F420H2 dehydrogenase	Anaerobic oxidation of methane (AOM)
+fpoN	13	14	10	9	11	13	F420H2 dehydrogenase	Anaerobic oxidation of methane (AOM)
+fqoD	1	0	0	0	0	1	F420H2: quinone oxidoreductase	Anaerobic oxidation of methane (AOM)
+fqoH	0	0	0	0	0	0	F420H2: quinone oxidoreductase	Anaerobic oxidation of methane (AOM)
+frhA	0	0	0	0	2	4	Coenzyme F420 hydrogenase	Anaerobic oxidation of methane (AOM)
+frhB	0	1	1	4	5	9	Coenzyme F420 hydrogenase	Anaerobic oxidation of methane (AOM)
+frhD	0	1	1	2	6	12	Coenzyme F420 hydrogenase	Anaerobic oxidation of methane (AOM)
+frhG	0	0	0	1	2	1	Coenzyme F420 hydrogenase	Anaerobic oxidation of methane (AOM)
+ftr	2	1	2	3	3	3	Formylmethanofuran--tetrahydromethanopterin, N-formyltransferase	Anaerobic oxidation of methane (AOM)
+fwdB	3	2	5	2	3	1	Tungsten containing formylmethanofuran dehydrogenase	Anaerobic oxidation of methane (AOM)
+fwdC	0	0	1	2	1	3	Tungsten containing formylmethanofuran dehydrogenase	Anaerobic oxidation of methane (AOM)
+fwdF	0	0	0	0	0	1	Tungsten containing formylmethanofuran dehydrogenase	Anaerobic oxidation of methane (AOM)
+fwdG	0	0	0	2	1	4	Tungsten containing formylmethanofuran dehydrogenase	Anaerobic oxidation of methane (AOM)
+hdrA1	0	1	8	11	13	23	Heterodisulphide reductase	Anaerobic oxidation of methane (AOM)
+hdrA2	4	7	22	42	73	77	Heterodisulphide reductase	Anaerobic oxidation of methane (AOM)
+hdrB1	0	1	4	10	8	19	Heterodisulphide reductase	Anaerobic oxidation of methane (AOM)
+hdrB2	2	1	2	3	18	14	Heterodisulphide reductase	Anaerobic oxidation of methane (AOM)
+hdrC1	0	0	2	3	1	5	Heterodisulphide reductase	Anaerobic oxidation of methane (AOM)
+hdrC2	0	1	2	6	17	24	Heterodisulphide reductase	Anaerobic oxidation of methane (AOM)
+hdrD	4	15	18	28	46	38	Heterodisulphide reductase	Anaerobic oxidation of methane (AOM)
+hdrE	1	1	0	0	0	1	Heterodisulphide reductase	Anaerobic oxidation of methane (AOM)
+hmd	0	0	0	0	0	1	5,10-methenyltetrahydromethanopterin hydrogenase	Anaerobic oxidation of methane (AOM)
+mch	1	1	2	9	2	4	Methenyltetrahydromethanopterin cyclohydrolase	Anaerobic oxidation of methane (AOM)
+mer	50	48	25	10	11	12	5,10-methylenetetrahydromethanopterin reductase	Anaerobic oxidation of methane (AOM)
+metF	19	18	16	6	6	7	5,10-methylenetetrahydrofolate reductase	Anaerobic oxidation of methane (AOM)
+mtd	0	0	1	0	1	2	Methylenetetrahydromethanopterin dehydrogenase	Anaerobic oxidation of methane (AOM)
+mtdB	2	2	2	4	0	0	Methylenetetrahydromethanopterin dehydrogenase	Anaerobic oxidation of methane (AOM)
+mtrA	0	0	0	1	2	2	Tetrahydromethanopterin S-methyltransferase	Anaerobic oxidation of methane (AOM)
+mtrH	0	0	2	6	4	6	Tetrahydromethanopterin S-methyltransferase	Anaerobic oxidation of methane (AOM)
+napH	5	3	2	2	2	2	Ferredoxin-type protein NapH	Anaerobic oxidation of methane (AOM)
+narB	17	26	15	11	23	19	Nitrate reductase	Anaerobic oxidation of methane (AOM)
+narG	4	11	14	6	7	6	Nitrate reductase	Anaerobic oxidation of methane (AOM)
+narH	13	16	17	15	9	2	Nitrate reductase	Anaerobic oxidation of methane (AOM)
+narZ	1	1	1	4	1	2	Nitrate reductase	Anaerobic oxidation of methane (AOM)
+nirK	17	13	9	15	6	4	Nitrite reductase (NO-forming)	Anaerobic oxidation of methane (AOM)
+nirS	6	3	2	0	1	1	Nitrite reductase (NO-forming)	Anaerobic oxidation of methane (AOM)
+nod	0	0	0	0	0	0	NO dismutase	Anaerobic oxidation of methane (AOM)
+nrfA	3	2	2	1	1	1	Nitrite reductase (cytochrome c?552)	Anaerobic oxidation of methane (AOM)
+nrfH	4	1	3	1	1	0	Cytochrome c-type protein NrfH	Anaerobic oxidation of methane (AOM)
+nxrA	6	7	4	3	5	0	Nitrite oxidoreductase	Anaerobic oxidation of methane (AOM)
+rnfA	3	5	6	8	11	11	Na+-translocating ferredoxin:NAD+oxidoreductase	Anaerobic oxidation of methane (AOM)
+rnfB	15	22	31	39	53	56	Na+-translocating ferredoxin:NAD+oxidoreductase	Anaerobic oxidation of methane (AOM)
+rnfC	2	7	7	15	29	35	Na+-translocating ferredoxin:NAD+oxidoreductase	Anaerobic oxidation of methane (AOM)
+rnfD	4	3	9	10	9	14	Na+-translocating ferredoxin:NAD+oxidoreductase	Anaerobic oxidation of methane (AOM)
+rnfE	16	13	17	13	16	16	Na+-translocating ferredoxin:NAD+oxidoreductase	Anaerobic oxidation of methane (AOM)
+rnfG	4	7	7	10	12	12	Na+-translocating ferredoxin:NAD+oxidoreductase	Anaerobic oxidation of methane (AOM)
+echA	1	0	0	0	1	0	Ech hydrogenase	Central methanogenic pathway
+echB	0	1	2	0	0	2	Ech hydrogenase	Central methanogenic pathway
+echC	0	0	0	0	0	1	Ech hydrogenase	Central methanogenic pathway
+echE	0	0	0	0	2	4	Ech hydrogenase	Central methanogenic pathway
+ehaQ	0	0	0	0	0	1	Energy-converting hydrogenase A	Central methanogenic pathway
+ehaR	0	0	0	0	2	2	Energy-converting hydrogenase A	Central methanogenic pathway
+ehbA	4	4	3	1	3	2	Energy-converting hydrogenase B	Central methanogenic pathway
+ehbB	1	1	1	1	1	0	Energy-converting hydrogenase B	Central methanogenic pathway
+ehbC	4	2	1	2	1	4	Energy-converting hydrogenase B	Central methanogenic pathway
+ehbD	0	0	0	0	0	1	Energy-converting hydrogenase B	Central methanogenic pathway
+ehbE	7	4	3	3	3	2	Energy-converting hydrogenase B	Central methanogenic pathway
+ehbF	0	0	0	0	0	1	Energy-converting hydrogenase B	Central methanogenic pathway
+ehbH	10	4	3	6	5	6	Energy-converting hydrogenase B	Central methanogenic pathway
+ehbI	0	0	0	0	3	6	Energy-converting hydrogenase B	Central methanogenic pathway
+ehbK	0	0	0	0	1	0	Energy-converting hydrogenase B	Central methanogenic pathway
+ehbQ	0	0	0	0	1	1	Energy-converting hydrogenase B	Central methanogenic pathway
+fpoA	7	4	8	12	3	8	F420H2 dehydrogenase	Central methanogenic pathway
+fpoB	19	10	16	14	20	21	F420H2 dehydrogenase	Central methanogenic pathway
+fpoC	14	9	15	6	8	8	F420H2 dehydrogenase	Central methanogenic pathway
+fpoD	4	12	7	8	3	4	F420H2 dehydrogenase	Central methanogenic pathway
+fpoF	0	0	0	0	1	0	F420H2 dehydrogenase	Central methanogenic pathway
+fpoH	12	6	10	8	15	16	F420H2 dehydrogenase	Central methanogenic pathway
+fpoI	0	0	1	0	1	0	F420H2 dehydrogenase	Central methanogenic pathway
+fpoJ	9	9	9	14	11	8	F420H2 dehydrogenase	Central methanogenic pathway
+fpoK	11	9	9	12	6	5	F420H2 dehydrogenase	Central methanogenic pathway
+fpoL	14	11	11	11	11	16	F420H2 dehydrogenase	Central methanogenic pathway
+fpoM	13	7	6	14	11	7	F420H2 dehydrogenase	Central methanogenic pathway
+fpoN	13	14	10	9	11	13	F420H2 dehydrogenase	Central methanogenic pathway
+fqoD	1	0	0	0	0	1	F420H2: quinone oxidoreductase	Central methanogenic pathway
+fqoH	0	0	0	0	0	0	F420H2: quinone oxidoreductase	Central methanogenic pathway
+frhA	0	0	0	0	2	4	Coenzyme F420 hydrogenase	Central methanogenic pathway
+frhB	0	1	1	4	5	9	Coenzyme F420 hydrogenase	Central methanogenic pathway
+frhD	0	1	1	2	6	12	Coenzyme F420 hydrogenase	Central methanogenic pathway
+frhG	0	0	0	1	2	1	Coenzyme F420 hydrogenase	Central methanogenic pathway
+hdrA1	0	1	8	11	13	23	Heterodisulphide reductase	Central methanogenic pathway
+hdrA2	4	7	22	42	73	77	Heterodisulphide reductase	Central methanogenic pathway
+hdrB1	0	1	4	10	8	19	Heterodisulphide reductase	Central methanogenic pathway
+hdrB2	2	1	2	3	18	14	Heterodisulphide reductase	Central methanogenic pathway
+hdrC1	0	0	2	3	1	5	Heterodisulphide reductase	Central methanogenic pathway
+hdrC2	0	1	2	6	17	24	Heterodisulphide reductase	Central methanogenic pathway
+hdrD	4	15	18	28	46	38	Heterodisulphide reductase	Central methanogenic pathway
+hdrE	1	1	0	0	0	1	Heterodisulphide reductase	Central methanogenic pathway
+mbhJ	0	0	1	0	4	5	Membrane-bound hydrogenase	Central methanogenic pathway
+mbhK	0	0	0	0	2	2	Membrane-bound hydrogenase	Central methanogenic pathway
+mbhL	0	0	0	1	2	2	Membrane-bound hydrogenase	Central methanogenic pathway
+mtrA	0	0	0	1	2	2	Tetrahydromethanopterin S-methyltransferase	Central methanogenic pathway
+mtrH	0	0	2	6	4	6	Tetrahydromethanopterin S-methyltransferase	Central methanogenic pathway
+mvhA	0	0	0	2	7	14	F420-nonreducing hydrogenase	Central methanogenic pathway
+mvhD	1	1	3	17	39	42	F420-nonreducing hydrogenase	Central methanogenic pathway
+mvhG	0	0	1	2	5	14	F420-nonreducing hydrogenase	Central methanogenic pathway
+rnfA	3	5	6	8	11	11	Na+-translocating ferredoxin:NAD+oxidoreductase	Central methanogenic pathway
+rnfB	15	22	31	39	53	56	Na+-translocating ferredoxin:NAD+oxidoreductase	Central methanogenic pathway
+rnfC	2	7	7	15	29	35	Na+-translocating ferredoxin:NAD+oxidoreductase	Central methanogenic pathway
+rnfD	4	3	9	10	9	14	Na+-translocating ferredoxin:NAD+oxidoreductase	Central methanogenic pathway
+rnfE	16	13	17	13	16	16	Na+-translocating ferredoxin:NAD+oxidoreductase	Central methanogenic pathway
+rnfG	4	7	7	10	12	12	Na+-translocating ferredoxin:NAD+oxidoreductase	Central methanogenic pathway
+vhcA	0	1	1	0	2	1	F420-nonreducing hydrogenase	Central methanogenic pathway
+vhcD	0	0	0	0	2	1	F420-nonreducing hydrogenase	Central methanogenic pathway
+vhcG	0	0	2	0	2	5	F420-nonreducing hydrogenase	Central methanogenic pathway
+vhtG	0	1	0	0	3	4	Methanophenazine hydrogenase	Central methanogenic pathway
+vhuA	0	0	0	0	0	2	F420-nonreducing hydrogenase	Central methanogenic pathway
+vhuD	0	0	1	2	5	7	F420-nonreducing hydrogenase	Central methanogenic pathway
+vhuG	0	0	0	2	1	2	F420-nonreducing hydrogenase	Central methanogenic pathway
+fmdC	1	0	0	0	2	2	Molybdenum containing formylmethanofuran dehydrogenase	Hydrogenotrophic methanogenesis
+ftr	2	1	2	3	3	3	Formylmethanofuran--tetrahydromethanopterin, N-formyltransferase	Hydrogenotrophic methanogenesis
+fwdB	3	2	5	2	3	1	Tungsten containing formylmethanofuran dehydrogenase	Hydrogenotrophic methanogenesis
+fwdC	0	0	1	2	1	3	Tungsten containing formylmethanofuran dehydrogenase	Hydrogenotrophic methanogenesis
+fwdF	0	0	0	0	0	1	Tungsten containing formylmethanofuran dehydrogenase	Hydrogenotrophic methanogenesis
+fwdG	0	0	0	2	1	4	Tungsten containing formylmethanofuran dehydrogenase	Hydrogenotrophic methanogenesis
+hmd	0	0	0	0	0	1	5,10-methenyltetrahydromethanopterin hydrogenase	Hydrogenotrophic methanogenesis
+mch	1	1	2	9	2	4	Methenyltetrahydromethanopterin cyclohydrolase	Hydrogenotrophic methanogenesis
+mer	50	48	25	10	11	12	5,10-methylenetetrahydromethanopterin reductase	Hydrogenotrophic methanogenesis
+metF	19	18	16	6	6	7	5,10-methylenetetrahydrofolate reductase	Hydrogenotrophic methanogenesis
+mtd	0	0	1	0	1	2	Methylenetetrahydromethanopterin dehydrogenase	Hydrogenotrophic methanogenesis
+mtdB	2	2	2	4	0	0	Methylenetetrahydromethanopterin dehydrogenase	Hydrogenotrophic methanogenesis
+mtaA	3	3	5	14	18	19	Coenzyme M methyltransferase	Methylotrophic methanogenesis
+mtaB	0	0	0	0	0	2	Coenzyme M methyltransferase	Methylotrophic methanogenesis
+mtaC	0	0	0	0	0	2	Coenzyme M methyltransferase	Methylotrophic methanogenesis
+mtbA	0	0	1	0	6	7	Dimethylamine methyltransferase	Methylotrophic methanogenesis
+mtbB	0	0	2	9	19	12	Dimethylamine methyltransferase	Methylotrophic methanogenesis
+mtbC	12	13	22	18	44	44	Dimethylamine methyltransferase	Methylotrophic methanogenesis
+mtmB	0	0	3	4	14	10	Monomethylamine methyltransferase	Methylotrophic methanogenesis
+mtsA	0	0	0	1	1	2	Methylated-thiol--coenzyme m methyltransferase	Methylotrophic methanogenesis
+mttB	6	5	12	41	63	56	Trimethylamine methyltransferase	Methylotrophic methanogenesis
+mttC	1	2	5	12	14	19	Trimethylamine methyltransferase	Methylotrophic methanogenesis
+torA	12	6	3	11	6	11	Trimethylamine-N-oxide reductase	Methylotrophic methanogenesis
+torC	5	3	3	1	1	1	Trimethylamine-N-oxide reductase	Methylotrophic methanogenesis
+torD	0	3	3	1	2	3	Trimethylamine-N-oxide reductase	Methylotrophic methanogenesis
+torY	0	1	0	0	0	1	Trimethylamine-N-oxide reductase	Methylotrophic methanogenesis
+torZ	4	3	3	5	3	3	Trimethylamine-N-oxide reductase	Methylotrophic methanogenesis
+fae	1	1	1	1	1	2	5,6,7,8-tetrahydromethanopterin hydro-lyase	Oxidation of formaldehyde
+fdhA-K00148	16	11	14	17	23	38	Glutathione-independent formaldehyde dehydrogenase	Oxidation of formaldehyde
+fdm	1	0	1	7	6	10	Formaldehyde dismutase	Oxidation of formaldehyde
+fghA	4	1	3	0	1	1	S-formylglutathione hydrolase	Oxidation of formaldehyde
+frmA	41	31	29	17	21	25	S-(hydroxymethyl)glutathione dehydrogenase/alcohol dehydrogenase	Oxidation of formaldehyde
+gfa	2	2	1	3	5	5	S-(hydroxymethyl)glutathione synthase	Oxidation of formaldehyde
+mch	1	1	2	9	2	4	Methenyltetrahydromethanopterin cyclohydrolase	Oxidation of formaldehyde
+mdo	0	1	0	0	0	0	Formaldehyde dismutase / methanol dehydrogenase	Oxidation of formaldehyde
+fdhA	18	26	13	26	49	53	Formate dehydrogenase (coenzyme F420/NADP+)	Oxidation of formate
+fdhB	14	14	17	19	20	21	Formate dehydrogenase (coenzyme F420/NADP+)	Oxidation of formate
+fdhF	5	9	10	10	8	13	Formate dehydrogenase H	Oxidation of formate
+fdoG	8	13	6	5	3	2	Formate dehydrogenase	Oxidation of formate
+fdoH	2	4	4	9	16	12	Formate dehydrogenase	Oxidation of formate
+fdoI	5	4	4	9	4	5	Formate dehydrogenase	Oxidation of formate
+fdwB	11	15	14	11	11	7	Tungsten-containing formate dehydrogenase	Oxidation of formate
+amoA	1	0	0	0	0	0	Ammonia monooxygenase	Oxidation of merthane and C1 compounds
+amoB	0	0	0	0	0	4	Ammonia monooxygenase	Oxidation of merthane and C1 compounds
+dcmA	1	1	0	0	0	0	Transcriptional repressor of dcmA and dcmR	Oxidation of merthane and C1 compounds
+dcmR	0	0	0	0	0	0	Dichloromethane dehalogenase	Oxidation of merthane and C1 compounds
+mauA	3	1	2	0	0	0	Methylamine dehydrogenase	Oxidation of merthane and C1 compounds
+mauB	0	3	2	0	0	0	Methylamine dehydrogenase	Oxidation of merthane and C1 compounds
+mauC	16	9	14	14	4	5	Methylamine dehydrogenase	Oxidation of merthane and C1 compounds
+mauD	0	0	1	0	0	1	Methylamine dehydrogenase	Oxidation of merthane and C1 compounds
+mauE	0	1	2	0	1	2	Methylamine dehydrogenase	Oxidation of merthane and C1 compounds
+mdh	17	8	5	15	25	35	NAD-dependent methanol dehydrogenase	Oxidation of merthane and C1 compounds
+mgdA	2	2	1	1	1	0	Methylglutamate dehydrogenase	Oxidation of merthane and C1 compounds
+mgsA	8	4	4	3	2	2	Methylamine---glutamate N-methyltransferase	Oxidation of merthane and C1 compounds
+mgsB	2	2	1	0	0	0	Methylamine---glutamate N-methyltransferase	Oxidation of merthane and C1 compounds
+mgsC	18	16	12	6	7	6	Methylamine---glutamate N-methyltransferase	Oxidation of merthane and C1 compounds
+mmoC	11	8	4	11	8	7	Methane monooxygenase	Oxidation of merthane and C1 compounds
+mxaC	1	1	2	4	3	0	Methanol dehydrogenase	Oxidation of merthane and C1 compounds
+mxaD	3	0	0	0	1	0	Methanol dehydrogenase	Oxidation of merthane and C1 compounds
+mxaF	23	13	9	8	1	1	Methanol dehydrogenase	Oxidation of merthane and C1 compounds
+mxaG	2	2	1	1	0	0	Methanol dehydrogenase	Oxidation of merthane and C1 compounds
+mxaL	3	1	2	0	0	0	Methanol dehydrogenase	Oxidation of merthane and C1 compounds
+pqqA	2	2	1	2	3	5	Coenzyme PQQ synthesis	Oxidation of merthane and C1 compounds
+pqqB	2	3	3	2	4	2	Coenzyme PQQ synthesis	Oxidation of merthane and C1 compounds
+pqqC	6	2	2	1	1	2	Coenzyme PQQ synthesis	Oxidation of merthane and C1 compounds
+pqqD	2	1	0	2	2	2	Coenzyme PQQ synthesis	Oxidation of merthane and C1 compounds
+pqqE	21	21	29	33	29	31	Coenzyme PQQ synthesis	Oxidation of merthane and C1 compounds
+pqqF	10	12	5	6	5	8	Coenzyme PQQ synthesis	Oxidation of merthane and C1 compounds
+tmm	1	3	0	0	0	1	Trimethylamine monooxygenase	Oxidation of merthane and C1 compounds
+xoxF1	1	1	0	0	0	1	Methanol dehydrogenase	Oxidation of merthane and C1 compounds
+xoxF4	3	2	1	1	0	0	Methanol dehydrogenase	Oxidation of merthane and C1 compounds
+xoxF5	16	4	5	0	1	0	Methanol dehydrogenase	Oxidation of merthane and C1 compounds
+fae-hps	3	3	2	1	2	5	Bifunctional enzyme Fae/Hps	RuMP cycle
+fbaA	16	14	12	13	34	35	Fructose-bisphosphate aldolase	RuMP cycle
+fbaB	2	2	2	0	1	3	Fructose-bisphosphate aldolase	RuMP cycle
+fbp	7	5	6	3	9	13	Fructose?1,6-bisphosphatase I	RuMP cycle
+glpX	15	16	10	5	15	7	Fructose?1,6-bisphosphatase II	RuMP cycle
+hxlA	1	4	4	1	2	3	3-hexulose?6-phosphate synthase	RuMP cycle
+hxlB	7	7	3	10	8	16	6-phospho?3-hexuloisomerase	RuMP cycle
+pfkA	7	7	10	7	10	13	6-phosphofructokinase	RuMP cycle
+pfkB	5	5	8	11	12	27	6-phosphofructokinase	RuMP cycle
+pfp	35	32	26	25	31	41	Pyrophosphate--fructose 6-phosphate 1-phosphotransferase	RuMP cycle
+apgM	8	5	2	11	14	27	2,3-bisphosphoglycerate-independent phosphoglycerate mutase	Serine cycle
+dfrA1	0	0	0	0	0	1	Dihydrofolate reductase	Serine cycle
+eno	26	27	22	27	40	38	Enolase	Serine cycle
+fchA	2	3	3	8	5	11	Methenyltetrahydrofolate cyclohydrolase	Serine cycle
+folA	80	64	60	58	54	57	Dihydrofolate reductase	Serine cycle
+gck	6	4	6	12	8	13	Glycerate 2-kinase	Serine cycle
+glyA	79	63	57	56	53	61	Glycine hydroxymethyltransferase	Serine cycle
+gpmB	21	10	7	9	14	25	Phosphoglycerate mutase	Serine cycle
+gpmI	8	6	6	12	6	9	Phosphoglycerate mutase	Serine cycle
+hprA	20	12	8	9	22	23	Glycerate dehydrogenase	Serine cycle
+mcl	23	19	21	18	22	20	Malyl-CoA/(S)-citramalyl-CoA lyase	Serine cycle
+mdh-K00024	27	21	19	16	24	26	Malate dehydrogenase	Serine cycle
+mtkA	15	12	10	12	18	25	Malate-CoA ligase	Serine cycle
+mtkB	25	20	14	15	30	41	Malate-CoA ligase	Serine cycle
+porA	15	25	28	39	54	74	Pyruvate ferredoxin oxidoreductase	Serine cycle
+porB	10	12	18	20	30	38	Pyruvate ferredoxin oxidoreductase	Serine cycle
+porD	9	4	8	10	37	40	Pyruvate ferredoxin oxidoreductase	Serine cycle
+porG	3	5	11	18	35	58	Pyruvate ferredoxin oxidoreductase	Serine cycle
+ppc	6	8	5	1	1	2	Phosphoenolpyruvate carboxylase	Serine cycle
+pps	14	23	20	16	27	27	Pyruvate, water dikinase	Serine cycle
+serA	59	56	46	59	74	62	D?3-phosphoglycerate dehydrogenase / 2-oxoglutarate reductase	Serine cycle
+serB	25	26	28	18	26	28	Phosphoserine phosphatase	Serine cycle
+serC	14	13	8	11	8	8	Phosphoserine aminotransferase	Serine cycle
+thrH	3	3	0	2	0	0	Phosphoserine / homoserine phosphotransferase	Serine cycle

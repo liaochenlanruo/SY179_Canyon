@@ -1,0 +1,2 @@
+./SCycDB_FunctionProfiler.PL -d AAs/ -m diamond -f faa -s prot -si SI.txt -o SCyc.txt
+

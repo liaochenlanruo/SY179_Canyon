@@ -1,0 +1,210 @@
+Gene	Annotation	Pathways
+cysC	Adenylylsulfate kinase	Assimilatory sulfate reduction
+cysD	Sulfate adenylyltransferase subunit 2	Assimilatory sulfate reduction
+cysH	Phosphoadenosine phosphosulfate reductase	Assimilatory sulfate reduction
+cysI	Sulfite reductase (NADPH) hemoprotein beta-component	Assimilatory sulfate reduction
+cysJ	Sulfite reductase (NADPH) flavoprotein alpha-component	Assimilatory sulfate reduction
+cysN	Sulfate adenylyltransferase subunit 1	Assimilatory sulfate reduction
+cysN_cysC	Bifunctional enzyme CysN/CysC	Assimilatory sulfate reduction
+cysNC	Bifunctional enzyme CysN/CysC	Assimilatory sulfate reduction
+cysQ	3'(2'), 5'-bisphosphate nucleotidase	Assimilatory sulfate reduction
+nrnA	Bifunctional oligoribonuclease and PAP phosphatase NrnA	Assimilatory sulfate reduction
+sat	Sulfate adenylyltransferase	Assimilatory sulfate reduction
+sir	Sulfite reductase (ferredoxin)	Assimilatory sulfate reduction
+aprA	Adenylylsulfate reductase, subunit A	Dissimilatory sulfur reduction and oxidation
+aprB	Adenylylsulfate reductase, subunit B	Dissimilatory sulfur reduction and oxidation
+dsrA	Dissimilatory sulfite reductase alpha subunit	Dissimilatory sulfur reduction and oxidation
+dsrB	Dissimilatory sulfite reductase beta subunit	Dissimilatory sulfur reduction and oxidation
+dsrC	Dissimilatory sulfite reductase related protein	Dissimilatory sulfur reduction and oxidation
+dsrD	Protein DsrD	Dissimilatory sulfur reduction and oxidation
+dsrE	Sulfurtransferase	Dissimilatory sulfur reduction and oxidation
+dsrF	Intracellular sulfur oxidation protein	Dissimilatory sulfur reduction and oxidation
+dsrH	Intracellular sulfur oxidation protein	Dissimilatory sulfur reduction and oxidation
+dsrJ	Protein DsrJ	Dissimilatory sulfur reduction and oxidation
+dsrK	Protein DsrK	Dissimilatory sulfur reduction and oxidation
+dsrL	Protein DsrL	Dissimilatory sulfur reduction and oxidation
+dsrM	Protein DsrM	Dissimilatory sulfur reduction and oxidation
+dsrN	Protein DsrN	Dissimilatory sulfur reduction and oxidation
+dsrO	Protein DsrO	Dissimilatory sulfur reduction and oxidation
+dsrP	Protein DsrP	Dissimilatory sulfur reduction and oxidation
+dsrT	Protein DsrT	Dissimilatory sulfur reduction and oxidation
+qmoA	Quinone-modifying oxidoreductase, subunit QmoA	Dissimilatory sulfur reduction and oxidation
+qmoB	Quinone-modifying oxidoreductase, subunit QmoB	Dissimilatory sulfur reduction and oxidation
+qmoC	Quinone-modifying oxidoreductase, subunit QmoC	Dissimilatory sulfur reduction and oxidation
+rdsr	Reverse dissimilatory sulfite reductase	Dissimilatory sulfur reduction and oxidation
+sat	Sulfate adenylyltransferase	Dissimilatory sulfur reduction and oxidation
+asrA	Anaerobic sulfite reductase subunit A	Sulfur reduction
+asrB	Anaerobic sulfite reductase subunit B	Sulfur reduction
+asrC	Anaerobic sulfite reductase subunit C	Sulfur reduction
+fsr	Sulfite reductase (coenzyme F420)	Sulfur reduction
+hydA	Sulfhydrogenase subunit alpha	Sulfur reduction
+hydB	Sulfhydrogenase subunit beta (sulfur reductase)	Sulfur reduction
+hydD	Sulfhydrogenase subunit delta	Sulfur reduction
+hydG	Sulfhydrogenase subunit gamma (sulfur reductase)	Sulfur reduction
+mccA	Dissimilatory sulfite reductase	Sulfur reduction
+otr	Octaheme tetrathionate reductase Otr	Sulfur reduction
+psrA	Polysulfide reductase chain A	Sulfur reduction
+psrB	Polysulfide reductase chain B	Sulfur reduction
+psrC	Polysulfide reductase chain C	Sulfur reduction
+rdlA	Putative rhodanese-like protein	Sulfur reduction
+shyA	Sulfhydrogenase 2 subunit alpha	Sulfur reduction
+shyB	Sulfhydrogenase 2 subunit beta	Sulfur reduction
+shyC	Sulfhydrogenase 2 subunit gamma	Sulfur reduction
+shyD	Sulfhydrogenase 2 subunit delta	Sulfur reduction
+sreA	Sulfur reductase molybdopterin subunit	Sulfur reduction
+sreB	Sulfur reductase FeS subunit	Sulfur reduction
+sreC	Sulfur reductase membrane anchor	Sulfur reduction
+sudA	Sulfide dehydrogenase subunit alpha	Sulfur reduction
+sudB	Sulfide dehydrogenase subunit beta	Sulfur reduction
+ttrA	Tetrathionate reductase subunit A	Sulfur reduction
+ttrB	Tetrathionate reductase subunit B	Sulfur reduction
+ttrC	Tetrathionate reductase subunit C	Sulfur reduction
+soxA	L-cysteine S-thiosulfotransferase	SOX systems
+soxB	S-sulfosulfanyl-L-cysteine sulfohydrolase	SOX systems
+soxC	Sulfane dehydrogenase subunit SoxC	SOX systems
+soxD	S-disulfanyl-L-cysteine oxidoreductase SoxD	SOX systems
+soxX	L-cysteine S-thiosulfotransferase	SOX systems
+soxY	Sulfur-oxidizing protein SoxY	SOX systems
+soxZ	Sulfur-oxidizing protein SoxZ	SOX systems
+doxA	thiosulfate dehydrogenase [quinone] small subunit	Sulfur oxidation
+doxD	thiosulfate dehydrogenase [quinone] large subunit	Sulfur oxidation
+fccA	Cytochrome subunit of sulfide dehydrogenase	Sulfur oxidation
+fccB	Sulfide dehydrogenase [flavocytochrome c] flavoprotein chain	Sulfur oxidation
+glpE	Thiosulfate sulfurtransferase	Sulfur oxidation
+soeA	Sulfite dehydrogenase (quinone) subunit SoeA	Sulfur oxidation
+soeB	Sulfite dehydrogenase (quinone) subunit SoeB	Sulfur oxidation
+soeC	Sulfite dehydrogenase (quinone) subunit SoeC	Sulfur oxidation
+sorA	Sulfite cytochrome c oxidoreductase-subunitA	Sulfur oxidation
+sorB	Sulfite cytochrome c oxidoreductase-subunitB	Sulfur oxidation
+sqr	Sulfide:quinone oxidoreductase	Sulfur oxidation
+sseA	Thiosulfate sulfurtransferase	Sulfur oxidation
+tsdA	Thiosulfate dehydrogenase	Sulfur oxidation
+tsdB	Thiosulfate dehydrogenase electron acceptor	Sulfur oxidation
+phsA	Thiosulfate reductase	Sulfur disproportionation
+phsB	Thiosulfate reductase electron transport protein	Sulfur disproportionation
+phsC	Thiosulfate reductase cytochrome b subunit	Sulfur disproportionation
+tetH	Tetrathionate hydrolase TetH	Sulfur disproportionation
+sor	Sulfur oxygenase/reductase	Sulfur disproportionation
+acuI	Acrylyl-CoA reductase AcuI	Organic sulfur transformation
+acuK	Enoyl-CoA hydratase/isomerases AcuK	Organic sulfur transformation
+acuN	CoA-transferase family III AcuN	Organic sulfur transformation
+betA	Oxygen-dependent choline dehydrogenase	Organic sulfur transformation
+betB	NAD/NADP-dependent betaine aldehyde dehydrogenase	Organic sulfur transformation
+betC	Choline-sulfatase	Organic sulfur transformation
+comA	Phosphosulfolactate synthase	Organic sulfur transformation
+comB	2-phosphosulfolactate phosphatase	Organic sulfur transformation
+comC	L-sulfolactate dehydrogenase	Organic sulfur transformation
+comD	Sulfopyruvate decarboxylase subunit alpha	Organic sulfur transformation
+comE	Sulfopyruvate decarboxylase subunit beta	Organic sulfur transformation
+dddA	Glucose-methanol-choline flavoprotein oxido-reductases DddA	Organic sulfur transformation
+dddC	NADP-containing dehydrogenases DddC	Organic sulfur transformation
+dddD	CoA-transferase/lyase DddD	Organic sulfur transformation
+dddK	Dimethlysulfonioproprionate lyase	Organic sulfur transformation
+dddL	Dimethlysulfonioproprionate lyase	Organic sulfur transformation
+dddP	Dimethlysulfonioproprionate lyase DddP	Organic sulfur transformation
+dddQ	Dimethlysulfonioproprionate lyase DddQ	Organic sulfur transformation
+dddT	Betaine/carnitine/choline transporter DddT	Organic sulfur transformation
+dddW	Dimethlysulfonioproprionate lyase DddW	Organic sulfur transformation
+dddY	Dimethlysulfonioproprionate lyase DddY	Organic sulfur transformation
+ddhA	Dimethylsulfide dehydrogenase subunit alpha	Organic sulfur transformation
+ddhB	Dimethylsulfide dehydrogenase subunit beta	Organic sulfur transformation
+ddhC	Dimethylsulfide dehydrogenase subunit gamma	Organic sulfur transformation
+dmdA	Dimethylsulfoniopropionate demethylase	Organic sulfur transformation
+dmdB	3-(methylthio)propionyl---CoA ligase	Organic sulfur transformation
+dmdC	3-(methylthio)propanoyl-CoA dehydrogenase	Organic sulfur transformation
+dmdD	(methylthio)acryloyl-CoA hydratase	Organic sulfur transformation
+dmoA	dimethyl-sulfide monooxygenase	Organic sulfur transformation
+dmsA	Anaerobic dimethyl sulfoxide reductase subunit A	Organic sulfur transformation
+dmsB	Anaerobic dimethyl sulfoxide reductase subunit B	Organic sulfur transformation
+dmsC	Anaerobic dimethyl sulfoxide reductase subunit C	Organic sulfur transformation
+dsyB	DsyB	Organic sulfur transformation
+gdh	Glutamate dehydrogenase (NADP+)	Organic sulfur transformation
+hpsN	Sulfopropanediol 3-dehydrogenase	Organic sulfur transformation
+hpsO	R or S-dihydroxypropanesulfonate-2-dehydrogenase	Organic sulfur transformation
+hpsP	R or S-dihydroxypropanesulfonate-2-dehydrogenase	Organic sulfur transformation
+iseJ	Isethionate dehydrogenase	Organic sulfur transformation
+isfD	Sulfoacetaldehyde reductase	Organic sulfur transformation
+mddA	Methanethiol S-methyltransferase	Organic sulfur transformation
+mdh	Malate dehydrogenase	Organic sulfur transformation
+mtsA	Methylthiol:coenzyme M methyltransferase	Organic sulfur transformation
+mtsB	Methylated-thiol--corrinoid protein	Organic sulfur transformation
+prpE	Propionate--CoA ligase	Organic sulfur transformation
+pta	Phosphate acetyltransferase	Organic sulfur transformation
+sfnG	Dimethylsulfone monooxygenase	Organic sulfur transformation
+slcC	s-sulfolactate dehydrogenase	Organic sulfur transformation
+slcD	Sulfolactate dehydrogenase SlcD	Organic sulfur transformation
+sqdB	UDP-sulfoquinovose synthase	Organic sulfur transformation
+sqdD	Glycosyltransferase	Organic sulfur transformation
+sqdX	Glycogen synthase	Organic sulfur transformation
+tauX	Taurine dehydrogenase small subunit	Organic sulfur transformation
+tauY	Taurine dehydrogenase large subunit	Organic sulfur transformation
+tmm	Trimethylamine monooxygenase	Organic sulfur transformation
+toa	Taurine:2-oxoglutarate transaminase	Organic sulfur transformation
+tpa	Taurine-pyruvate aminotransferase	Organic sulfur transformation
+yihQ	Sulfoquinovosidase	Organic sulfur transformation
+cuyA	L-cysteate sulfo-lyase	Link between inorganic and organic sulfur transformation
+cysE	Serine O-acetyltransferase	Link between inorganic and organic sulfur transformation
+cysK	Cysteine synthase	Link between inorganic and organic sulfur transformation
+cysM	Cysteine synthase	Link between inorganic and organic sulfur transformation
+cysO	Cysteine synthase	Link between inorganic and organic sulfur transformation
+hdrA1	heterodisulfide reductase subunit A1	Link between inorganic and organic sulfur transformation
+hdrA2	heterodisulfide reductase subunit A2	Link between inorganic and organic sulfur transformation
+hdrB1	heterodisulfide reductase subunit B1	Link between inorganic and organic sulfur transformation
+hdrB2	heterodisulfide reductase subunit B2	Link between inorganic and organic sulfur transformation
+hdrC1	heterodisulfide reductase subunit C1	Link between inorganic and organic sulfur transformation
+hdrC2	heterodisulfide reductase subunit C2	Link between inorganic and organic sulfur transformation
+hdrD	heterodisulfide reductase subunit D	Link between inorganic and organic sulfur transformation
+hdrE	heterodisulfide reductase subunit E	Link between inorganic and organic sulfur transformation
+mccB	Cystathionine gamma-lyase / homocysteine desulfhydrase	Link between inorganic and organic sulfur transformation
+metA	Homoserine O-succinyltransferase/ O-acetyltransferase	Link between inorganic and organic sulfur transformation
+metB	Cystathionine gamma-synthase	Link between inorganic and organic sulfur transformation
+metC	Cystathionine beta-lyase	Link between inorganic and organic sulfur transformation
+metX	Homoserine O-acetyltransferase/O-succinyltransferase	Link between inorganic and organic sulfur transformation
+metY	O-acetyl-L-homoserine sulfhydrylase	Link between inorganic and organic sulfur transformation
+metZ	O-succinylhomoserine sulfhydrylase	Link between inorganic and organic sulfur transformation
+msmA	Methanesulfonate monooxygenase subunit alpha	Link between inorganic and organic sulfur transformation
+msmB	Methanesulfonate monooxygenase subunit beta	Link between inorganic and organic sulfur transformation
+mtoX	Methanethiol oxidase	Link between inorganic and organic sulfur transformation
+ssuD	Alkanesulfonate monooxygenase	Link between inorganic and organic sulfur transformation
+ssuE	FMN reductase	Link between inorganic and organic sulfur transformation
+suyA	(2R)-sulfolactate sulfo-lyase subunit alpha	Link between inorganic and organic sulfur transformation
+suyB	(2R)-sulfolactate sulfo-lyase subunit beta	Link between inorganic and organic sulfur transformation
+tauD	Taurine dioxygenase	Link between inorganic and organic sulfur transformation
+tbuB	Toluene-3-monooxygenase	Link between inorganic and organic sulfur transformation
+tbuC	Toluene-3-monooxygenase	Link between inorganic and organic sulfur transformation
+tmoC	Toluene-4-monooxygenase	Link between inorganic and organic sulfur transformation
+tmoF	Toluene-4-monooxygenase	Link between inorganic and organic sulfur transformation
+touC	Toluene o-xylene monooxygenase	Link between inorganic and organic sulfur transformation
+touF	Toluene o-xylene monooxygenase	Link between inorganic and organic sulfur transformation
+xsc	Sulfoacetaldehyde acetyltransferase	Link between inorganic and organic sulfur transformation
+cuyZ	Sulfite exporter	Others
+cysA	Sulfate/thiosulfate import ATP-binding protein CysA	Others
+cysP	Thiosulfate-binding protein	Others
+cysU	Sulfate transport system permease protein CysT	Others
+cysW	Sulfate transport system permease protein CysW	Others
+cysZ	Sulfate transporter CysZ	Others
+hpsK	Dihydroxypropanesulfonate transporter	Others
+hpsL	Dihydroxypropanesulfonate transporter	Others
+hpsM	Dihydroxypropanesulfonate transporter	Others
+iseK	Isethionate TRAP transporter	Others
+iseL	Isethionate TRAP transporter	Others
+iseM	Isethionate TRAP transporter	Others
+sbp	Sulfate-binding protein	Others
+sgpA	Sulfur globule protein CV1	Others
+sgpB	Sulfur globule protein CV2	Others
+sgpC	Sulfur globule protein CV3	Others
+soxL	Sulfur transferase, periplasm	Others
+ssuA	Sulfonate transport system substrate-binding protein	Others
+ssuB	Sulfonate transport system ATP-binding protein	Others
+ssuC	Sulfonate transport system permease protein	Others
+sulP	Sulfate permease	Others
+tauA	Taurine transport system substrate-binding protein	Others
+tauB	Taurine transport system ATP-binding protein	Others
+tauC	Taurine transport system permease protein	Others
+tauE	Sulfite/organosulfonate exporter	Others
+tauZ	Membrane protein TauZ	Others
+tusA	Sulfur carrier protein TusA	Others
+tusB	tRNA 2-thiouridine synthesizing protein B	Others
+tusC	tRNA 2-thiouridine synthesizing protein C	Others
+tusD	Sulfurtransferase TusD	Others
+tusE	Sulfurtransferase TusE	Others
